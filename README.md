@@ -10,6 +10,20 @@ $ npm install v-easy-loading -s
 ```
 
 # 使用
+## 快速开始
+``` js
+import VEasyLoading from 'v-easy-loading'
+
+Vue.use(VEasyLoading)
+```
+
+## Example
+``` html
+<v-easy-loading backColor="#ddd">
+    <div>内容</div>
+</v-easy-loading>
+```
+
 ## 自适应须知
 - 该组件使用 REM 布局实现多终端适配，使用时请搭配使用 [lib-flexible](https://github.com/amfe/lib-flexible) 方案
   
@@ -59,10 +73,5 @@ $ npm install v-easy-loading -s
     </tr>
 </table>
 
-## Example
-``` html
-<v-easy-loading backColor="#ddd">
-    <div>内容</div>
-</v-easy-loading>
-```
+
  
