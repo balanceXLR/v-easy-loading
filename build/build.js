@@ -7,6 +7,7 @@ webpack(config, (err, stats) => {
     console.error(err);
     return;
   }
+  console.log('entry:' + config.entry)
   // 处理完成
   console.log(stats.toString({
     chunks: false,  // 使构建过程更静默无输出
