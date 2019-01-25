@@ -1,35 +1,68 @@
-# vc-component
+# v-easy-loading
 
-## 用于vue组件开发的通用模板
+## 简单易用的vue移动端开发loading组件
 
-## 建议结合[v-scofford](https://github.com/1465799166/vs-scaffold)使用 
 
 # Build Step
 
 ``` bash
-$ npm install
+$ npm install v-easy-loading -s
 ```
 
-# 最佳实践
-## init project
-- 推荐使用[vs-scofford](https://github.com/1465799166/vs-scaffold)进行模板初始化
-- 修改package.json中的相关信息
+# 使用
+## 自适应须知
+- 该组件使用 REM 布局实现多终端适配，使用时请搭配使用 [lib-flexible](https://github.com/amfe/lib-flexible) 方案
   
-## 开发方式
-- 你只需要关注src目录下的代码
-- components下的每一个文件夹代表一个组件
-- 在components/index.js进行组件注册，打包入口即为这个index.js文件
+## 参数说明
+<table>
+    <tr>
+        <th>key</th>
+        <th>type</th>
+        <th>default</th>
+        <th>necessary</th>
+        <th>description</th>
+    </tr>
+    <tr>
+        <td>isLoading</td>
+        <td>Boolean</td>
+        <td>true</td>
+        <td>false</td>
+        <td>loading状态是否开启</td>
+    </tr>
+    <tr>
+        <td>backColor</td>
+        <td>String</td>
+        <td>#fff</td>
+        <td>false</td>
+        <td>loading背景色，仅支持16进制色值</td>
+    </tr>
+    <tr>
+        <td>opacity</td>
+        <td>Number</td>
+        <td>1</td>
+        <td>false</td>
+        <td>loading背景透明度</td>
+    </tr>
+    <tr>
+        <td>logoUrl</td>
+        <td>String</td>
+        <td>any</td>
+        <td>false</td>
+        <td>loading图标</td>
+    </tr>
+    <tr>
+        <td>logoSize</td>
+        <td>Array</td>
+        <td>[48, 48]</td>
+        <td>false</td>
+        <td>loading图标大小，分别为[wdith, height]</td>
+    </tr>
+</table>
 
-## 本地调试
-- ssr
-  ``` bash
-  npm run dev
-  ``` 
-  与传统的vue-cli脚手架相同的开发模式，入口为src/index.js，支持vue-router
-- html
-  在components/index.js中注册组件后进行打包
-  ``` bash
-  npm run build
-  ```
-  然后直接在 components/dev.html中直接使用标签即可
+## Example
+``` html
+<v-easy-loading backColor="#ddd">
+    <div>内容</div>
+</v-easy-loading>
+```
  

@@ -6,11 +6,7 @@
 </template>
 <script>
     export default {
-        data() {
-            return {
-
-            }
-        },
+        name: 'v-easy-loading',
         props: {
             isLoading: {
                 type: Boolean,
@@ -30,7 +26,9 @@
             },
             logoSize: {
                 type: Array,
-                default: [48 ,48]
+                default: () => {
+                    return [48, 48]
+                }
             }
         },
         created() {
@@ -59,27 +57,24 @@
                 if (hex.length == 3) {
                     hex = hex.replace(/(.)/g, '$1$1')
                 }
-                hex.replace(/../g, function(color) {
+                hex.replace(/../g, function (color) {
                     rgb.push(parseInt(color, 0x10))
                 })
-                if(!opacity) {
+                if (!opacity) {
                     return `rgb(${rgb.join(',')})`
                 }
                 return `rgba(${rgb.join(',')}, ${opacity})`
             }
-
-        },
-        watch: {
         }
     }
 </script>
 <style lang='less' scoped>
-@rem: 75rem;
-.v-easy-loading {
-    z-index: 9999;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-}
+    @rem: 75rem;
 
+    .v-easy-loading {
+        z-index: 9999;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+    }
 </style>
