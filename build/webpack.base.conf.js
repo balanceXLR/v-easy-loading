@@ -29,7 +29,7 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader' // 解析vue
+        loader: 'vue-loader', // 解析vue
       },
       {
         test: /\.css$/,
@@ -45,6 +45,6 @@ module.exports = {
     new VueLoaderPlugin(), // 也是为了解析vue
     new HtmlWebpackPlugin({ // 将打包产生的文件挂载到目标html上
       template: path.resolve(__dirname, '../index.html')
-    })
+    }),
   ]
 };
